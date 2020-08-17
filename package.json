@@ -1,6 +1,6 @@
 {
   "name": "frontend-project-lvl1",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,8 @@
     "url": "git@github.com-inferal73:inferal73/frontend-project-lvl1.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
