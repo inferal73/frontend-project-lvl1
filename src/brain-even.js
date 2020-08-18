@@ -1,5 +1,12 @@
 import {
-  randomInteger, isEven, checkAnswer, convertQuestionToSimple, message, question, failureMessage, successMessage,
+  randomInteger,
+  isEven,
+  checkAnswer,
+  convertQuestionToSimple,
+  message,
+  question,
+  failureMessage,
+  successMessage,
 } from './utils.js';
 
 const STEP_COUNT = 3;
