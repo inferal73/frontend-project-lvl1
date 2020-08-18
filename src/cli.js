@@ -1,9 +1,18 @@
-import readlineSync from 'readline-sync';
+import { message, question } from './utils.js';
 
-export const run = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
+const askName = () => {
+  const name = question('May I have your name? ');
+  if (!name || name.length === 0) return 'Anonymous';
+  return name;
 };
 
-export default run;
+export const welcomeMessage = () => {
+  message('Welcome to the Brain Games!');
+  const name = askName();
+  message(`Hello, ${name}!`);
+  return name;
+};
+
+export { runBrainEven } from './brain-even.js';
+
+export default welcomeMessage;
