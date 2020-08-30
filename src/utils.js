@@ -28,6 +28,14 @@ export const checkAnswer = (answer, question, simpleAnswer = false) => {
   return answer === question;
 };
 
+export const gcd = (a, b) => {
+  if (b > 0) {
+    const c = a % b;
+    return gcd(b, c);
+  }
+  return Math.abs(a);
+};
+
 export const message = (text) => console.log(colors.cyan(text));
 export const question = (text) => readlineSync.question(colors.yellow(text));
 export const successMessage = (text) => console.log(colors.brightGreen(text));
