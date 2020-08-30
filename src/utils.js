@@ -18,7 +18,24 @@ export const randomInteger = (min, max) => {
   return Math.floor(rand);
 };
 
+export const randomProgression = (len = 10) => {
+  const startNumber = randomInteger(4, 10);
+  const step = randomInteger(2, 8);
+  const progression = [startNumber];
+  for (let i = 0; i < len; i += 1) {
+    progression.push(progression[progression.length - 1] + step);
+  }
+  return progression;
+};
+
 export const randomElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+export const hideArrayEl = (el, progression) => {
+  const progressionWithSecret = [...progression];
+  const idx = progression.indexOf(el);
+  progressionWithSecret[idx] = '..';
+  return progressionWithSecret;
+};
 
 export const isSimpleAnswerCorrect = (answer) => ['yes', 'no'].indexOf(answer) > -1;
 export const convertQuestionToSimple = (question) => (question ? 'yes' : 'no');

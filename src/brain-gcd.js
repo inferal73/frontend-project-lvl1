@@ -1,14 +1,12 @@
 import {
-  isEven,
   checkAnswer,
-  convertQuestionToSimple,
   message,
   question,
   failureMessage,
   successMessage,
   repeatGame,
   randomInteger,
-  gcd
+  gcd,
 } from './utils.js';
 
 export const randomNilToThousand = () => randomInteger(0, 1000);
