@@ -1,5 +1,4 @@
 import {
-  randomInteger,
   isEven,
   checkAnswer,
   convertQuestionToSimple,
@@ -7,16 +6,16 @@ import {
   question,
   failureMessage,
   successMessage,
+  repeatGame,
+  randomInteger,
 } from './utils.js';
 
-const STEP_COUNT = 3;
-
-const randomNilToThousand = () => randomInteger(0, 1000);
+export const randomNilToThousand = () => randomInteger(0, 1000);
 
 export const runBrainEven = (name) => {
   message('Answer "yes" if the number is even, otherwise answer "no".');
 
-  for (let i = 0; i < STEP_COUNT; i += 1) {
+  repeatGame((context) => {
     const num = randomNilToThousand();
 
     message(`Question: ${num}`);
@@ -24,17 +23,17 @@ export const runBrainEven = (name) => {
 
     const isNumEven = isEven(num);
     const simpleQuestion = convertQuestionToSimple(isNumEven);
-    const isAnswerCorrect = checkAnswer(answer, simpleQuestion);
+    const isAnswerCorrect = checkAnswer(answer, simpleQuestion, true);
 
     if (isAnswerCorrect) {
       successMessage('Correct!');
-      if (i === STEP_COUNT - 1) successMessage(`Congratulations, ${name}!`);
-    } else {
-      failureMessage(`"${answer}" is wrong answer ;(. Correct answer was "${simpleQuestion}".`);
-      failureMessage(`Let's try again, ${name}!`);
-      break;
+      if (context.isLastItem) successMessage(`Congratulations, ${name}!`);
+      return true;
     }
-  }
+    failureMessage(`"${answer}" is wrong answer ;(. Correct answer was "${simpleQuestion}".`);
+    failureMessage(`Let's try again, ${name}!`);
+    return false;
+  });
 };
 
 export default runBrainEven;

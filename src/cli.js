@@ -14,5 +14,6 @@ export const welcomeMessage = () => {
 };
 
 export { runBrainEven } from './brain-even.js';
+export { runBrainCalc } from './brain-calc.js';
 
 export default welcomeMessage;
