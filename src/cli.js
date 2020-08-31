@@ -17,5 +17,6 @@ export { runBrainEven } from './brain-even.js';
 export { runBrainCalc } from './brain-calc.js';
 export { runBrainGcd } from './brain-gcd.js';
 export { runBrainProgression } from './brain-progression.js';
+export { runBrainPrime } from './brain-prime.js';
 
 export default welcomeMessage;

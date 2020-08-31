@@ -53,6 +53,13 @@ export const gcd = (a, b) => {
   return Math.abs(a);
 };
 
+export const isPrimality = (n) => {
+  for (let i = 2; i < n; i += 1) {
+    if (n % i === 0) return false;
+  }
+  return n > 1;
+};
+
 export const message = (text) => console.log(colors.cyan(text));
 export const question = (text) => readlineSync.question(colors.yellow(text));
 export const successMessage = (text) => console.log(colors.brightGreen(text));
