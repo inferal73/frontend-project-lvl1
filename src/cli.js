@@ -1,4 +1,4 @@
-import { message, question } from './utils.js';
+import { message, question } from './utils/helpers.js';
 
 const askName = () => {
   const name = question('May I have your name? ');
@@ -12,11 +12,5 @@ export const welcomeMessage = () => {
   message(`Hello, ${name}!`);
   return name;
 };
-
-export { runBrainEven } from './brain-even.js';
-export { runBrainCalc } from './brain-calc.js';
-export { runBrainGcd } from './brain-gcd.js';
-export { runBrainProgression } from './brain-progression.js';
-export { runBrainPrime } from './brain-prime.js';
 
 export default welcomeMessage;

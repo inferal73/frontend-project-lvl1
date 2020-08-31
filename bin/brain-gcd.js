@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import { welcomeMessage, runBrainGcd } from '../src/cli.js';
+import { welcomeMessage } from '../src/cli.js';
+import { runBrainGcd } from '../src/games/brain-gcd.js';
 
 const name = welcomeMessage();
 runBrainGcd(name);

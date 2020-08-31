@@ -1,4 +1,4 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability) ![Lint](https://github.com/inferal73/frontend-project-lvl1/workflows/lint/badge.svg)
+[![Maintainability](https://api.codeclimate.com/v1/badges/eb7c35f84a3a70555c1d/maintainability)](https://codeclimate.com/github/inferal73/frontend-project-lvl1/maintainability) ![Lint](https://github.com/inferal73/frontend-project-lvl1/workflows/lint/badge.svg)
 
 # frontend-project-lvl1
 
