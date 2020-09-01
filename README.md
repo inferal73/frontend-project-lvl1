@@ -4,4 +4,20 @@
 
 ## Brain Even
 
-![Asciinema for brain even](https://raw.githubusercontent.com/inferal73/frontend-project-lvl1/master/assets/brain-even-asciinema.svg)
+https://asciinema.org/a/qmFc4XDupIw8t2mCHCTvr4G4K
+
+## Brain Calc
+
+https://asciinema.org/a/hPxS4OPKiNP0TVanXFEGYTdfz
+
+## Brain GCD
+
+https://asciinema.org/a/6ar0rPmc5Ol4DAuDVjuRgdOdg
+
+## Brain Progression
+
+https://asciinema.org/a/dZAA4ilUtNov1mgJba2fyFfIH
+
+## Brain Prime
+
+https://asciinema.org/a/c0mtNGbWVPMvSIznXEErDjFhY
