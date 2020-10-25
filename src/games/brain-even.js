@@ -5,10 +5,12 @@ import {
   gameСycle,
   askQuestion,
   getAnswer,
-} from './engine.js';
-import { randomInteger, isEven } from '../utils/number.js';
+} from '../engine.js';
+import { randomInteger } from '../utils/number.js';
 
-export const runBrainEven = (name) => {
+const isEven = (num) => num % 2 === 0;
+
+export const runBrainEven = () => {
   gameСycle(() => {
     const randomNumber = randomInteger(0, 1000);
 
@@ -20,12 +22,11 @@ export const runBrainEven = (name) => {
     const isAnswerCorrect = checkAnswer(answer, simpleQuestion, true);
 
     return {
-      name,
       answer,
       result: simpleQuestion,
       isAnswerCorrect,
     };
-  }, buildGameContext(name));
+  }, buildGameContext());
 };
 
 export default runBrainEven;

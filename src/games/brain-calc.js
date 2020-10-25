@@ -4,7 +4,7 @@ import {
   gameСycle,
   askQuestion,
   getAnswer,
-} from './engine.js';
+} from '../engine.js';
 import { randomInteger } from '../utils/number.js';
 import { getRandomElement } from '../utils/array.js';
 
@@ -27,8 +27,8 @@ const operations = [
 
 const randomOperation = () => getRandomElement(operations);
 
-export const runBrainCalc = (name) => {
-  const context = buildGameContext(name, 'What is the result of the expression?');
+export const runBrainCalc = () => {
+  const context = buildGameContext('What is the result of the expression?');
 
   gameСycle(() => {
     const a = randomNumber();
@@ -41,7 +41,6 @@ export const runBrainCalc = (name) => {
 
     const isAnswerCorrect = checkAnswer(answer, String(result));
     return {
-      name,
       answer,
       result,
       isAnswerCorrect,

@@ -4,13 +4,21 @@ import {
   gameСycle,
   askQuestion,
   getAnswer,
-} from './engine.js';
-import { randomInteger, gcd } from '../utils/number.js';
+} from '../engine.js';
+import { randomInteger } from '../utils/number.js';
+
+const gcd = (a, b) => {
+  if (b > 0) {
+    const c = a % b;
+    return gcd(b, c);
+  }
+  return Math.abs(a);
+};
 
 export const randomNilToThousand = () => randomInteger(0, 1000);
 
-export const runBrainGcd = (name) => {
-  const context = buildGameContext(name, 'Find the greatest common divisor of given numbers.');
+export const runBrainGcd = () => {
+  const context = buildGameContext('Find the greatest common divisor of given numbers.');
 
   gameСycle(() => {
     const a = randomNilToThousand();
@@ -23,7 +31,6 @@ export const runBrainGcd = (name) => {
     const isAnswerCorrect = checkAnswer(answer, String(gcdNum));
 
     return {
-      name,
       answer,
       result: gcdNum,
       isAnswerCorrect,

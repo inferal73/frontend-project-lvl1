@@ -5,10 +5,19 @@ import {
   convertQuestionToSimple,
   askQuestion,
   getAnswer,
-} from './engine.js';
-import { randomInteger, isPrimality } from '../utils/number.js';
+} from '../engine.js';
+import { randomInteger } from '../utils/number.js';
 
-export const runBrainPrime = (name) => {
+const isPrimality = (n) => {
+  for (let i = 2; i < n; i += 1) {
+    if (n % i === 0) return false;
+  }
+  return n > 1;
+};
+
+export const runBrainPrime = () => {
+  const context = buildGameContext('Answer "yes" if given number is prime. Otherwise answer "no".');
+
   gameСycle(() => {
     const randomNumber = randomInteger(0, 1000);
 
@@ -20,12 +29,11 @@ export const runBrainPrime = (name) => {
     const isAnswerCorrect = checkAnswer(answer, simpleQuestion, true);
 
     return {
-      name,
       answer,
       result: simpleQuestion,
       isAnswerCorrect,
     };
-  }, buildGameContext(name));
+  }, context);
 };
 
 export default runBrainPrime;
